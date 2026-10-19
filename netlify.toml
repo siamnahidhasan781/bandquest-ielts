@@ -1,0 +1,13 @@
+# BandQuest IELTS — Netlify deploy config
+# Netlify auto-detects Next.js and uses its Next.js Runtime for API routes.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# API routes run as serverless functions via Netlify's Next.js Runtime
+# (no redirects needed); the app uses Turso (remote SQLite) in production.
+# Set these in the Netlify dashboard (Site settings → Environment variables):
+#   TURSO_DATABASE_URL, TURSO_AUTH_TOKEN, JWT_SECRET, GEMINI_API_KEY, PUBLIC_APP_URL
